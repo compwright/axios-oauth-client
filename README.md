@@ -1,6 +1,6 @@
 # axios-oauth-client
 
-[![Build Status](https://travis-ci.org/compwright/axios-oauth-client.svg?branch=master)](https://travis-ci.org/compwright/axios-oauth-client)
+[![Build Status](https://travis-ci.org/compwright/axios-oauth-client.svg?branch=master)](https://travis-ci.org/compwright/axios-oauth-client) [![Greenkeeper badge](https://badges.greenkeeper.io/compwright/axios-oauth-client.svg)](https://greenkeeper.io/)
 
 OAuth 2.0 client utils for axios
 
