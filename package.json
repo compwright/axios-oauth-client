@@ -1,0 +1,37 @@
+{
+  "name": "axios-oauth-client",
+  "version": "1.0.0",
+  "description": "OAuth 2.0 client utils for axios",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/"
+  },
+  "author": "Jonathon Hill <jhill9693@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "axios-token-interceptor": "^0.1.0",
+    "mocha": "^5.2.0",
+    "qs": "^6.5.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compwright/axios-oauth-client.git"
+  },
+  "keywords": [
+    "oauth",
+    "oauth2",
+    "axios",
+    "interceptor"
+  ],
+  "bugs": {
+    "url": "https://github.com/compwright/axios-oauth-client/issues"
+  },
+  "homepage": "https://github.com/compwright/axios-oauth-client#readme",
+  "engines": {
+    "node": ">=8"
+  }
+}
