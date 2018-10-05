@@ -23,12 +23,16 @@ describe('interceptor', function() {
       });
     });
 
-    it('should cache the oauth access token until it expires', function(done) {
+    it('should cache the oauth access token until it expires', async function() {
+      function delay(ms) {
+        return new Promise((resolve, reject) => setTimeout(resolve, ms));
+      }
+
       let calls = 0;
       const authenticate = async() => {
         return {
           access_token: 'foo' + calls++,
-          expires_in: 1
+          expires_in: 2
         }
       };
 
@@ -43,27 +47,23 @@ describe('interceptor', function() {
         ])
       }
 
-      function delay(ms) {
-        return new Promise((resolve, reject) => setTimeout(resolve, ms));
-      }
-
       function verify(results, expected) {
         for (let result of results) {
           assert.deepEqual(result, expected);
         }
       }
 
-      test3x(req)
-        .then(results => verify(results, {
-          headers: { Authorization: 'Bearer foo0' }
-        }))
-        .then(() => delay(1500))
-        .then(() => test3x(req))
-        .then(results => verify(results, {
-          headers: { Authorization: 'Bearer foo1' }
-        }))
-        .then(() => done())
-        .catch(done);
+      let results = await test3x(req);
+      verify(results, {
+        headers: { Authorization: 'Bearer foo0' }
+      });
+
+      await delay(3000);
+
+      results = await test3x(req);
+      verify(results, {
+        headers: { Authorization: 'Bearer foo1' }
+      });
     });
   });
 });

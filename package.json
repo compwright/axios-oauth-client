@@ -4,7 +4,7 @@
   "description": "OAuth 2.0 client utils for axios",
   "main": "src/",
   "scripts": {
-    "test": "mocha tests/"
+    "test": "mocha tests/ --timeout 10000"
   },
   "author": "Jonathon Hill <jhill9693@gmail.com>",
   "license": "MIT",
