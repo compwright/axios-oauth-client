@@ -33,6 +33,6 @@
   },
   "devDependencies": {
     "axios-token-interceptor": "^0.1.0",
-    "mocha": "^5.2.0"
+    "mocha": "^6.0.0"
   }
 }
