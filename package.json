@@ -1,6 +1,6 @@
 {
   "name": "axios-oauth-client",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "OAuth 2.0 client utils for axios",
   "main": "src/",
   "scripts": {
