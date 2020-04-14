@@ -19,7 +19,7 @@ describe('client()', function () {
 
       const axios = async function (config) {
         const { url, ...data } = params;
-        assert.deepEqual(config, {
+        assert.deepStrictEqual(config, {
           url,
           method: 'post',
           data: qs.stringify(data)
@@ -30,12 +30,12 @@ describe('client()', function () {
       const auth = client(axios, params);
       assert.strictEqual(await auth(), true);
     });
-  
+
     it('should resolve to the OAuth token response', async function () {
       const data = { access_token: 'FAKE_TOKEN', expires_in: 5 };
       const axios = async () => ({ data });
       const auth = client(axios, {});
-      assert.deepEqual(await auth(), data);
+      assert.deepStrictEqual(await auth(), data);
     });
   });
 });

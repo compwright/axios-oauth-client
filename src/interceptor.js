@@ -1,8 +1,8 @@
-function getMaxAge(res) {
+function getMaxAge (res) {
   return res.expires_in;
 }
 
-function headerFormatter(res) {
+function headerFormatter (res) {
   return 'Bearer ' + res.access_token;
 }
 
