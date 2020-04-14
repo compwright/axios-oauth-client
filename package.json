@@ -2,10 +2,7 @@
   "name": "axios-oauth-client",
   "version": "1.2.3",
   "description": "OAuth 2.0 client utils for axios",
-  "main": "src/",
-  "scripts": {
-    "test": "mocha tests/ --timeout 10000"
-  },
+  "main": "dist/",
   "author": "Jonathon Hill <jhill9693@gmail.com>",
   "license": "MIT",
   "directories": {
@@ -28,11 +25,50 @@
   "engines": {
     "node": ">=8"
   },
+  "scripts": {
+    "publish": "git push origin --tags && npm run changelog && git push origin",
+    "release:pre": "npm run dist && npm version prerelease && npm publish --tag pre",
+    "release:patch": "npm run dist && npm version patch && npm publish",
+    "release:minor": "npm run dist && npm version minor && npm publish",
+    "release:major": "npm run dist && npm version major && npm publish",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
+    "dist": "npm run build && git commit -am \"Updating build\"",
+    "build": "babel src -d dist",
+    "pretest": "semistandard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix",
+    "test": "nyc mocha tests/ --timeout 10000"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "semistandard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "nyc": {
+    "cache": true,
+    "cacheDir": ".nyc_cache",
+    "include": [
+      "lib/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "browserslist": "> 0.25%, not dead",
   "dependencies": {
     "qs": "^6.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "axios-token-interceptor": "^0.2.0",
-    "mocha": "^7.1.0"
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "semistandard": "^14.2.0"
   }
 }
