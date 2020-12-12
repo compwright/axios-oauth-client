@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/compwright/axios-oauth-client#readme",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "scripts": {
     "publish": "git push origin --tags && npm run changelog && git push origin",
@@ -60,15 +60,15 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
-    "qs": "^6.8.0"
+    "qs": "^6.9.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
     "axios-token-interceptor": "^0.2.0",
-    "mocha": "^7.1.1",
-    "nyc": "^15.0.0",
-    "semistandard": "^14.2.0"
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "semistandard": "^16.0.0"
   }
 }
