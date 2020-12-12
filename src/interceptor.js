@@ -1,5 +1,5 @@
 function getMaxAge (res) {
-  return res.expires_in;
+  return res.expires_in * 1000;
 }
 
 function headerFormatter (res) {
