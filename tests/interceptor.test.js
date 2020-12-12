@@ -54,11 +54,16 @@ describe('interceptor', function () {
       }
 
       let results = await test3x(req);
+
+      await delay(1000);
+
+      results.push(...await test3x(req));
+
       verify(results, {
         headers: { Authorization: 'Bearer foo0' }
       });
 
-      await delay(3000);
+      await delay(2000);
 
       results = await test3x(req);
       verify(results, {
