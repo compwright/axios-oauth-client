@@ -60,15 +60,15 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
-    "qs": "^6.9.4"
+    "qs": "^6.10.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
     "axios-token-interceptor": "^0.2.0",
-    "mocha": "^8.2.1",
+    "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "semistandard": "^16.0.0"
+    "semistandard": "*"
   }
 }
