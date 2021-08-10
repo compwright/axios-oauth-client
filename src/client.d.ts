@@ -72,7 +72,7 @@ export interface OAuth2RefreshTokenRequest {
      * The scope of the access request as described by [RFC6749 Section 3.3](https://datatracker.ietf.org/doc/html/rfc6749#section-3.3).
      * The requested scope MUST NOT include any scope not originally granted by the resource owner, and if omitted is treated as equal to the scope originally granted by the resource owner.
      */
-     scope?: string;
+    scope?: string;
 }
 
 /**
