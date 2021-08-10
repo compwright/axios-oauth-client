@@ -1,2 +1,2 @@
-export * as client from "./client";
-export * as interceptor from "./interceptor";
+export const client: typeof import("./client");
+export const interceptor: typeof import("./interceptor");
