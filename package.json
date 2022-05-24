@@ -25,18 +25,6 @@
   "engines": {
     "node": ">=10"
   },
-  "scripts": {
-    "publish": "git push origin --tags && npm run changelog && git push origin",
-    "release:pre": "npm run dist && npm version prerelease && npm publish --tag pre",
-    "release:patch": "npm run dist && npm version patch && npm publish",
-    "release:minor": "npm run dist && npm version minor && npm publish",
-    "release:major": "npm run dist && npm version major && npm publish",
-    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
-    "dist": "npm run build && git add dist/* && git commit -am \"Updating build\"",
-    "build": "babel src -d dist",
-    "pretest": "semistandard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix",
-    "test": "nyc mocha tests/ --timeout 10000"
-  },
   "babel": {
     "presets": [
       "@babel/preset-env"
