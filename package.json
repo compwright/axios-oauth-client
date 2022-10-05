@@ -30,7 +30,7 @@
       "@babel/preset-env"
     ]
   },
-  "semistandard": {
+  "standard": {
     "env": [
       "mocha"
     ]
@@ -57,6 +57,6 @@
     "axios-token-interceptor": "^0.2.0",
     "mocha": "*",
     "nyc": "*",
-    "semistandard": "*"
+    "standard": "*"
   }
 }

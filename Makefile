@@ -14,7 +14,7 @@ changelog:
 	git push origin
 
 lint:
-	npx semistandard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
+	npx standard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
 
 test: lint
 	npx nyc mocha tests/ --timeout 10000
