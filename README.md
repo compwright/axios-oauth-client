@@ -17,15 +17,15 @@ $ npm install --save axios-oauth-client axios
 ```javascript
 const axios = require('axios');
 const oauth = require('axios-oauth-client');
-const getAuthorizationCode = oauth.client(axios.create(), {
-  url: 'https://oauth.com/2.0/token',
-  grant_type: 'authorization_code',
-  client_id: 'foo',
-  client_secret: 'bar',
-  redirect_uri: '...',
-  code: '...',
-  scope: 'baz',
-});
+const getAuthorizationCode = oauth.authorizationCode(
+  axios.create(),
+  'https://oauth.com/2.0/token', // OAuth 2.0 token endpoint
+  'CLIENT_ID',
+  'CLIENT_SECRET',
+  'https://your-app.com/oauth-redirect', // Redirect URL for your app
+  'AUTHORIZATION_CODE',
+  'OPTIONAL_SCOPES'
+);
 
 const auth = await getAuthorizationCode(); // => { "access_token": "...", "expires_in": 900, ... }
 ```
@@ -35,15 +35,15 @@ const auth = await getAuthorizationCode(); // => { "access_token": "...", "expir
 ```javascript
 const axios = require('axios');
 const oauth = require('axios-oauth-client');
-const getOwnerCredentials = oauth.client(axios.create(), {
-  url: 'https://oauth.com/2.0/token',
-  grant_type: 'password',
-  client_id: 'foo',
-  client_secret: 'bar',
-  username: 'asdf',
-  password: 'yuio',
-  scope: 'baz'
-});
+const getOwnerCredentials = oauth.ownerCredentials(
+  axios.create(),
+  'https://oauth.com/2.0/token', // OAuth 2.0 token endpoint
+  'CLIENT_ID',
+  'CLIENT_SECRET',
+  'USERNAME',
+  'PASSWORD',
+  'OPTIONAL_SCOPES'
+);
 
 const auth = await getOwnerCredentials(); // => { "access_token": "...", "expires_in": 900, ... }
 ```
@@ -53,12 +53,12 @@ const auth = await getOwnerCredentials(); // => { "access_token": "...", "expire
 ```javascript
 const axios = require('axios');
 const oauth = require('axios-oauth-client');
-const getClientCredentials = oauth.client(axios.create(), {
-  url: 'https://oauth.com/2.0/token',
-  grant_type: 'client_credentials',
-  client_id: 'foo',
-  client_secret: 'bar',
-  scope: 'baz'
+const getClientCredentials = oauth.clientCredentials(
+  axios.create(),
+  'https://oauth.com/2.0/token',
+  'CLIENT_ID',
+  'CLIENT_SECRET',
+  'OPTIONAL_SCOPES'
 });
 
 const auth = await getClientCredentials(); // => { "access_token": "...", "expires_in": 900, ... }
@@ -69,14 +69,14 @@ const auth = await getClientCredentials(); // => { "access_token": "...", "expir
 ```javascript
 const axios = require('axios');
 const oauth = require('axios-oauth-client');
-const getRefreshToken = oauth.client(axios.create(), {
-  url: 'https://oauth.com/2.0/token',
-  grant_type: 'refresh_token',
-  client_id: 'foo',
-  client_secret: 'bar',
-  refresh_token: '...',
-  scope: 'baz'
-});
+const getRefreshToken = oauth.refreshToken(
+  axios.create(),
+  'https://oauth.com/2.0/token',
+  'CLIENT_ID',
+  'CLIENT_SECRET',
+  'REFRESH_TOKEN',
+  'OPTIONAL_SCOPES'
+);
 
 const auth = await getRefreshToken(); // => { "access_token": "...", "refresh_token": "...", "expires_in": 900, ... }
 ```
