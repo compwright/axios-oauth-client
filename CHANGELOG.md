@@ -1,5 +1,31 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.0.0](https://github.com/compwright/axios-oauth-client/compare/v1.5.0...v2.0.0) (2022-10-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **package:** Dropped support for Node.js < 14
+
+### Features
+
+* Added new methods for specific grants ([146e53c](https://github.com/compwright/axios-oauth-client/commit/146e53c76993be10a56b3fc6b4086793074d6b18))
+* Allow state-specific arguments to be passed to the returned authorization function rather than the function factory ([c23458a](https://github.com/compwright/axios-oauth-client/commit/c23458a93a3cb75156660dc7dfa5433ae31035f0))
+* **changelog:** Improve changelog format ([e15da0e](https://github.com/compwright/axios-oauth-client/commit/e15da0ef88524809278893b964b3796a39718719))
+* Use ES6 import/export ([7641f04](https://github.com/compwright/axios-oauth-client/commit/7641f04c1089b1d7c75b757327f1defade81a0c1))
+
+
+### Bug Fixes
+
+* Removed interceptor and dependency on axios-token-interceptor ([4377964](https://github.com/compwright/axios-oauth-client/commit/4377964d285c37d80348b80120b2dab8881360b1))
+
+
+* **package:** Drop support for Node.js < 14 ([ca10d60](https://github.com/compwright/axios-oauth-client/commit/ca10d60eafdc42c8d2c3e8462b7acba2c273e5e2))
+
+# Changelog
+
 ## [v1.5.0](https://github.com/compwright/axios-oauth-client/tree/v1.5.0) (2022-05-24)
 
 [Full Changelog](https://github.com/compwright/axios-oauth-client/compare/v1.4.4...v1.5.0)
