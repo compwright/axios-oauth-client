@@ -1,14 +1,15 @@
 const assert = require('assert')
 const qs = require('qs')
+const { describe, test } = require('@jest/globals')
 const client = require('../src/client')
 
 describe('client()', function () {
-  it('should return a function', function () {
+  test('should return a function', function () {
     assert.strictEqual(typeof client(() => {}, {}), 'function')
   })
 
   describe('the function', function () {
-    it('should make an OAuth token request from the supplied parameters', async function () {
+    test('should make an OAuth token request from the supplied parameters', async function () {
       const params = {
         url: 'https://oauth.com/2.0/token',
         grant_type: 'client_credentials',
@@ -31,7 +32,7 @@ describe('client()', function () {
       assert.strictEqual(await auth(), true)
     })
 
-    it('should resolve to the OAuth token response', async function () {
+    test('should resolve to the OAuth token response', async function () {
       const data = { access_token: 'FAKE_TOKEN', expires_in: 5 }
       const axios = async () => ({ data })
       const auth = client(axios, {})

@@ -32,18 +32,7 @@
   },
   "standard": {
     "env": [
-      "mocha"
-    ]
-  },
-  "nyc": {
-    "cache": true,
-    "cacheDir": ".nyc_cache",
-    "include": [
-      "lib/**/*.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text-summary"
+      "jest"
     ]
   },
   "browserslist": "> 0.25%, not dead",
@@ -55,8 +44,7 @@
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "axios-token-interceptor": "^0.2.0",
-    "mocha": "*",
-    "nyc": "*",
+    "jest": "*",
     "standard": "*"
   }
 }

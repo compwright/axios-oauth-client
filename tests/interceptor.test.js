@@ -1,14 +1,15 @@
 const assert = require('assert')
 const tokenProvider = require('axios-token-interceptor')
+const { describe, test } = require('@jest/globals')
 const interceptor = require('../src/interceptor')
 
 describe('interceptor', function () {
-  it('should return an axios request interceptor function', function () {
+  test('should return an axios request interceptor function', function () {
     assert.strictEqual(typeof interceptor(tokenProvider), 'function')
   })
 
   describe('the axios request interceptor function', function () {
-    it('should set the oauth access token in the request authorization header with the bearer scheme', async function () {
+    test('should set the oauth access token in the request authorization header with the bearer scheme', async function () {
       const authenticate = async () => ({
         access_token: 'foo',
         expires_in: 0
@@ -23,7 +24,7 @@ describe('interceptor', function () {
       })
     })
 
-    it('should cache the oauth access token until it expires', async function () {
+    test('should cache the oauth access token until it expires', async function () {
       function delay (ms) {
         return new Promise((resolve, reject) => setTimeout(resolve, ms))
       }

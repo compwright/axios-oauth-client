@@ -14,10 +14,10 @@ changelog:
 	git push origin
 
 lint:
-	npx standard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
+	node_modules/.bin/standard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
 
 test: lint
-	npx nyc mocha tests/ --timeout 10000
+	node_modules/.bin/jest
 
 build: test compile typings commit
 
