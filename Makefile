@@ -1,10 +1,16 @@
 .DEFAULT_GOAL := build
 
-typings:
-	npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist
+lint:
+	node_modules/.bin/standard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
 
-compile:
-	npx babel src -d dist
+test: lint
+	node_modules/.bin/jest
+
+clean:
+	rm -Rf ./dist
+
+build: test clean
+	./node_modules/.bin/unbuild
 
 commit:
 	git diff --exit-code || git commit -am "Updating build"
@@ -12,14 +18,6 @@ commit:
 changelog:
 	github_changelog_generator --user compwright --project axios-oauth-client && git add CHANGELOG.md && git commit -am "Updating changelog"
 	git push origin
-
-lint:
-	node_modules/.bin/standard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
-
-test: lint
-	node_modules/.bin/jest
-
-build: test compile typings commit
 
 release-pre: build
 	npm version prerelease && npm publish --tag pre

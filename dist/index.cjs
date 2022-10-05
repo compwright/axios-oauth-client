@@ -1,6 +1,12 @@
-import require$$0 from 'qs';
+'use strict';
 
-const qs = require$$0;
+const require$$0 = require('qs');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
+
+const require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0);
+
+const qs = require$$0__default;
 var client = function(axios, { url, ...credentials }) {
   const config = {
     url,
@@ -26,4 +32,4 @@ var src = {
   interceptor: interceptor
 };
 
-export { src as default };
+module.exports = src;
