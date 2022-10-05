@@ -4,9 +4,6 @@
   "description": "OAuth 2.0 client utils for axios",
   "author": "Jonathon Hill <jhill9693@gmail.com>",
   "license": "MIT",
-  "directories": {
-    "test": "tests"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/compwright/axios-oauth-client.git"
@@ -43,15 +40,14 @@
     ]
   },
   "dependencies": {
-    "qs": "^6.10.1"
+    "qs": "^6.11.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "axios-token-interceptor": "^0.2.0",
     "jest": "latest",
     "standard": "latest",
     "unbuild": "latest"
+  },
+  "peerDependencies": {
+    "axios": "^1.0.0"
   }
 }

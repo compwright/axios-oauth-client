@@ -1,10 +1,10 @@
 .DEFAULT_GOAL := build
 
 lint:
-	node_modules/.bin/standard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
+	node_modules/.bin/standard --fix src
 
 test: lint
-	NODE_OPTIONS=--experimental-vm-modules node_modules/.bin/jest
+	NODE_OPTIONS=--experimental-vm-modules node_modules/.bin/jest src
 
 clean:
 	rm -Rf ./dist

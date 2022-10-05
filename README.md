@@ -7,7 +7,7 @@ OAuth 2.0 client utils for axios
 ## Installation
 
 ```bash
-$ npm install --save axios-oauth-client axios-token-interceptor axios
+$ npm install --save axios-oauth-client axios
 ```
 
 ## Axios OAuth 2.0 Client
@@ -79,26 +79,6 @@ const getRefreshToken = oauth.client(axios.create(), {
 });
 
 const auth = await getRefreshToken(); // => { "access_token": "...", "refresh_token": "...", "expires_in": 900, ... }
-```
-
-## Axios OAuth 2.0 Authentication interceptor
-
-```javascript
-const axios = require('axios');
-const oauth = require('axios-oauth-client');
-const tokenProvider = require('axios-token-interceptor');
-
-const getOwnerCredentials = oauth.client(axios.create(), {
-  // see example above
-})
-
-const instance = axios.create();
-instance.interceptors.request.use(
-  // Wraps axios-token-interceptor with oauth-specific configuration,
-  // fetches the token using the desired claim method, and caches
-  // until the token expires
-  oauth.interceptor(tokenProvider, getOwnerCredentials)
-);
 ```
 
 ## License

@@ -1,11 +1,11 @@
 import assert from 'assert'
 import qs from 'qs'
 import { describe, test } from '@jest/globals'
-import { client } from '../src/client'
+import oauth from './index'
 
-describe('client()', function () {
+describe('oauth()', function () {
   test('should return a function', function () {
-    assert.strictEqual(typeof client(() => {}, {}), 'function')
+    assert.strictEqual(typeof oauth(() => {}, {}), 'function')
   })
 
   describe('the function', function () {
@@ -28,14 +28,14 @@ describe('client()', function () {
         return { data: true }
       }
 
-      const auth = client(axios, params)
+      const auth = oauth(axios, params)
       assert.strictEqual(await auth(), true)
     })
 
     test('should resolve to the OAuth token response', async function () {
       const data = { access_token: 'FAKE_TOKEN', expires_in: 5 }
       const axios = async () => ({ data })
-      const auth = client(axios, {})
+      const auth = oauth(axios, {})
       assert.deepStrictEqual(await auth(), data)
     })
   })
