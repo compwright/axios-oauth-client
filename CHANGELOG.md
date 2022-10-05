@@ -1,13 +1,5 @@
 # Changelog
 
-## [Unreleased](https://github.com/compwright/axios-oauth-client/tree/HEAD)
-
-[Full Changelog](https://github.com/compwright/axios-oauth-client/compare/v1.5.0...HEAD)
-
-**Merged pull requests:**
-
-- Bump minimist from 1.2.5 to 1.2.6 [\#20](https://github.com/compwright/axios-oauth-client/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
-
 ## [v1.5.0](https://github.com/compwright/axios-oauth-client/tree/v1.5.0) (2022-05-24)
 
 [Full Changelog](https://github.com/compwright/axios-oauth-client/compare/v1.4.4...v1.5.0)
@@ -15,6 +7,10 @@
 **Closed issues:**
 
 - Typescript Support? [\#13](https://github.com/compwright/axios-oauth-client/issues/13)
+
+**Merged pull requests:**
+
+- Bump minimist from 1.2.5 to 1.2.6 [\#20](https://github.com/compwright/axios-oauth-client/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v1.4.4](https://github.com/compwright/axios-oauth-client/tree/v1.4.4) (2021-10-12)
 

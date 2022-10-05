@@ -45,6 +45,7 @@
   "devDependencies": {
     "jest": "latest",
     "standard": "latest",
+    "standard-version": "latest",
     "unbuild": "latest"
   },
   "peerDependencies": {
