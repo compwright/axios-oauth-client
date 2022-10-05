@@ -20,7 +20,7 @@
   "homepage": "https://github.com/compwright/axios-oauth-client#readme",
   "type": "module",
   "engines": {
-    "node": ">= 16"
+    "node": ">= 14"
   },
   "exports": {
     ".": {

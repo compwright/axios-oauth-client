@@ -1,13 +1,21 @@
 # axios-oauth-client
 
-[![Build Status](https://travis-ci.org/compwright/axios-oauth-client.svg?branch=master)](https://travis-ci.org/compwright/axios-oauth-client) [![Greenkeeper badge](https://badges.greenkeeper.io/compwright/axios-oauth-client.svg)](https://greenkeeper.io/)
+[![Build Status](https://app.travis-ci.com/compwright/axios-oauth-client.svg?branch=master)](https://app.travis-ci.com/github/compwright/axios-oauth-client)
 
 OAuth 2.0 client utils for axios
 
 ## Installation
 
+With NPM:
+
 ```bash
 $ npm install --save axios-oauth-client axios
+```
+
+With Yarn:
+
+```bash
+$ yarn add axios-oauth-client axios
 ```
 
 ## Axios OAuth 2.0 Client
