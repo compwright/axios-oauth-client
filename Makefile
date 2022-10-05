@@ -4,7 +4,7 @@ lint:
 	node_modules/.bin/standard src/*.js src/**/*.js tests/*.js tests/**/*.js --fix
 
 test: lint
-	node_modules/.bin/jest
+	NODE_OPTIONS=--experimental-vm-modules node_modules/.bin/jest
 
 clean:
 	rm -Rf ./dist

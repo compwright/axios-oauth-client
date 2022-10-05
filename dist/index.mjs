@@ -1,14 +1,13 @@
-import require$$0 from 'qs';
+import qs from 'qs';
 
-const qs = require$$0;
-var client = function(axios, { url, ...credentials }) {
+function client(axios, { url, ...credentials }) {
   const config = {
     url,
     method: "post",
     data: qs.stringify(credentials)
   };
   return () => axios(config).then((res) => res.data);
-};
+}
 
 function getMaxAge(res) {
   return res.expires_in * 1e3;
@@ -16,14 +15,9 @@ function getMaxAge(res) {
 function headerFormatter(res) {
   return "Bearer " + res.access_token;
 }
-var interceptor = function(tokenProvider, authenticate) {
+function interceptor(tokenProvider, authenticate) {
   const getToken = tokenProvider.tokenCache(authenticate, { getMaxAge });
   return tokenProvider({ getToken, headerFormatter });
-};
+}
 
-var src = {
-  client: client,
-  interceptor: interceptor
-};
-
-export { src as default };
+export { client, interceptor };

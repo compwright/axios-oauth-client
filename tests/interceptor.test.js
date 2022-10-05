@@ -1,7 +1,7 @@
-const assert = require('assert')
-const tokenProvider = require('axios-token-interceptor')
-const { describe, test } = require('@jest/globals')
-const interceptor = require('../src/interceptor')
+import assert from 'assert'
+import tokenProvider from 'axios-token-interceptor'
+import { describe, test } from '@jest/globals'
+import { interceptor } from '../src/interceptor'
 
 describe('interceptor', function () {
   test('should return an axios request interceptor function', function () {

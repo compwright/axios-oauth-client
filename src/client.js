@@ -1,6 +1,6 @@
-const qs = require('qs')
+import qs from 'qs'
 
-module.exports = function (axios, { url, ...credentials }) {
+export function client (axios, { url, ...credentials }) {
   const config = {
     url,
     method: 'post',

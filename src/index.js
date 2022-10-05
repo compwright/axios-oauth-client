@@ -1,4 +1,2 @@
-module.exports = {
-  client: require('./client'),
-  interceptor: require('./interceptor')
-}
+export * from './client'
+export * from './interceptor'

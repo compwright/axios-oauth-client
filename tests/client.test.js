@@ -1,7 +1,7 @@
-const assert = require('assert')
-const qs = require('qs')
-const { describe, test } = require('@jest/globals')
-const client = require('../src/client')
+import assert from 'assert'
+import qs from 'qs'
+import { describe, test } from '@jest/globals'
+import { client } from '../src/client'
 
 describe('client()', function () {
   test('should return a function', function () {
