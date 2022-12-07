@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/compwright/axios-oauth-client/compare/v2.0.0...v2.0.1) (2022-12-07)
+
+
+### Bug Fixes
+
+* state-specific arguments did not work as documented ([89804b8](https://github.com/compwright/axios-oauth-client/commit/89804b8109217294bce91d9ffd00db16e03401f7)), closes [#21](https://github.com/compwright/axios-oauth-client/issues/21) [#23](https://github.com/compwright/axios-oauth-client/issues/23)
+
 ## [2.0.0](https://github.com/compwright/axios-oauth-client/compare/v1.5.0...v2.0.0) (2022-10-05)
 
 
