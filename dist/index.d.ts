@@ -52,4 +52,4 @@ oauth.refreshToken = function(axios, url, client_id, client_secret, refresh_toke
   });
 };
 
-export { oauth as default };
+export = oauth;
