@@ -1,76 +1,16 @@
-import qs from 'qs';
+declare function authorizationCode(axios: any, url: any, client_id: any, client_secret: any, redirect_uri: any, code?: any, scope?: any): (code?: any, scope?: any) => any;
 
-function oauth(axios, { url, ...credentials }) {
-  return (moreCredentials = {}) => {
-    const body = {
-      ...credentials,
-      ...moreCredentials
-    };
-    if ("scope" in body && !body.scope) {
-      delete body.scope;
-    }
-    return axios({
-      url,
-      method: "post",
-      data: qs.stringify(body)
-    }).then((res) => res.data);
-  };
+declare function clientCredentials(axios: any, url: any, client_id: any, client_secret: any, scope?: any): (scope: any) => any;
+
+declare function ownerCredentials(axios: any, url: any, client_id: any, client_secret: any, username?: any, password?: any, scope?: any): (username?: any, password?: any, scope?: any) => any;
+
+declare function refreshToken(axios: any, url: any, client_id: any, client_secret: any, refresh_token?: any, scope?: any): (refresh_token?: any, scope?: any) => any;
+
+declare namespace _default {
+    export { authorizationCode };
+    export { clientCredentials };
+    export { ownerCredentials };
+    export { refreshToken };
 }
 
-function authorizationCode(axios, url, client_id, client_secret, redirect_uri, code = null, scope = null) {
-  const grant = oauth(axios, {
-    url,
-    grant_type: "authorization_code",
-    client_id,
-    client_secret,
-    redirect_uri,
-    code,
-    scope
-  });
-  return (code2 = null, scope2 = null) => grant({ code: code2, scope: scope2 });
-}
-
-function clientCredentials(axios, url, client_id, client_secret, scope = null) {
-  const grant = oauth(axios, {
-    url,
-    grant_type: "client_credentials",
-    client_id,
-    client_secret,
-    scope
-  });
-  return (scope2) => grant(scope2 ? { scope: scope2 } : null);
-}
-
-function ownerCredentials(axios, url, client_id, client_secret, username = null, password = null, scope = null) {
-  const grant = oauth(axios, {
-    url,
-    grant_type: "password",
-    client_id,
-    client_secret,
-    username,
-    password,
-    scope
-  });
-  return (username2 = null, password2 = null, scope2 = null) => grant({ username: username2, password: password2, scope: scope2 });
-}
-
-function refreshToken(axios, url, client_id, client_secret, refresh_token = null, scope = null) {
-  const grant = oauth(axios, {
-    url,
-    grant_type: "refresh_token",
-    client_id,
-    client_secret,
-    refresh_token,
-    scope
-  });
-  return (refresh_token2 = null, scope2 = null) => grant({ refresh_token: refresh_token2, scope: scope2 });
-}
-
-var index = {
-  authorizationCode,
-  clientCredentials,
-  ownerCredentials,
-  refreshToken
-};
-
-export { index as default };
+export { _default as default };
