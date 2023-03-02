@@ -63,7 +63,7 @@ const getClientCredentials = oauth.clientCredentials(
   'https://oauth.com/2.0/token',
   'CLIENT_ID',
   'CLIENT_SECRET'
-})
+)
 
 const auth = await getClientCredentials('OPTIONAL_SCOPES')
 // => { "access_token": "...", "expires_in": 900, ... }
