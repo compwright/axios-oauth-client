@@ -2,6 +2,10 @@
 
 const qs = require('qs');
 
+function _interopDefaultCompat (e) { return e && typeof e === 'object' && 'default' in e ? e.default : e; }
+
+const qs__default = /*#__PURE__*/_interopDefaultCompat(qs);
+
 function oauth(axios, { url, ...credentials }) {
   return (moreCredentials = {}) => {
     const body = {
@@ -14,7 +18,7 @@ function oauth(axios, { url, ...credentials }) {
     return axios({
       url,
       method: "post",
-      data: qs.stringify(body)
+      data: qs__default.stringify(body)
     }).then((res) => res.data);
   };
 }
