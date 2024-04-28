@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/compwright/axios-oauth-client/compare/v2.0.4...v2.1.0) (2024-04-28)
+
+
+### Features
+
+* remove qs dependency in favor of URLSearchParams ([2498309](https://github.com/compwright/axios-oauth-client/commit/2498309acdc2e0e0068632da4eeda6970291b45a))
+
 ### [2.0.4](https://github.com/compwright/axios-oauth-client/compare/v2.0.3...v2.0.4) (2023-10-16)
 
 
