@@ -1,7 +1,5 @@
 # axios-oauth-client
 
-[![Build Status](https://app.travis-ci.com/compwright/axios-oauth-client.svg?branch=master)](https://app.travis-ci.com/github/compwright/axios-oauth-client)
-
 OAuth 2.0 client utils for axios
 
 ## Installation
