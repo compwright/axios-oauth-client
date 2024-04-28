@@ -1,5 +1,3 @@
-import qs from 'qs'
-
 export default function oauth (axios, { url, ...credentials }) {
   return (moreCredentials = {}) => {
     const body = {
@@ -15,7 +13,7 @@ export default function oauth (axios, { url, ...credentials }) {
     return axios({
       url,
       method: 'post',
-      data: qs.stringify(body)
+      data: new URLSearchParams(body).toString()
     }).then(res => res.data)
   }
 }

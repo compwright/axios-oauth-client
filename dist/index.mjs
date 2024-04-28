@@ -1,5 +1,3 @@
-import qs from 'qs';
-
 function oauth(axios, { url, ...credentials }) {
   return (moreCredentials = {}) => {
     const body = {
@@ -12,7 +10,7 @@ function oauth(axios, { url, ...credentials }) {
     return axios({
       url,
       method: "post",
-      data: qs.stringify(body)
+      data: new URLSearchParams(body).toString()
     }).then((res) => res.data);
   };
 }
