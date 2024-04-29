@@ -1,4 +1,4 @@
-export default function oauth (axios, { url, ...credentials }) {
+export function oauth (axios, { url, ...credentials }) {
   return (moreCredentials = {}) => {
     const body = {
       ...credentials,

@@ -1,7 +1,7 @@
-import assert from 'assert'
+import assert from 'node:assert'
 import { test } from '@jest/globals'
-import ownerCredentials from './ownerCredentials'
-import fakeAxios from '../fakeAxios'
+import { ownerCredentials } from './ownerCredentials'
+import { fakeAxios } from '../fakeAxios'
 
 /* eslint-disable camelcase */
 

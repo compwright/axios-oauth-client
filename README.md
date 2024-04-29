@@ -22,8 +22,8 @@ $ yarn add axios-oauth-client axios
 
 ```javascript
 import axios from 'axios'
-import oauth from 'axios-oauth-client'
-const getAuthorizationCode = oauth.authorizationCode(
+import { authorizationCode } from 'axios-oauth-client'
+const getAuthorizationCode = authorizationCode(
   axios.create(),
   'https://oauth.com/2.0/token', // OAuth 2.0 token endpoint
   'CLIENT_ID',
@@ -39,8 +39,8 @@ const auth = await getAuthorizationCode('AUTHORIZATION_CODE', 'OPTIONAL_SCOPES')
 
 ```javascript
 import axios from 'axios'
-import oauth from 'axios-oauth-client'
-const getOwnerCredentials = oauth.ownerCredentials(
+import { ownerCredentials } from 'axios-oauth-client'
+const getOwnerCredentials = ownerCredentials(
   axios.create(),
   'https://oauth.com/2.0/token', // OAuth 2.0 token endpoint
   'CLIENT_ID',
@@ -55,8 +55,8 @@ const auth = await getOwnerCredentials('USERNAME', 'PASSWORD', 'OPTIONAL_SCOPES'
 
 ```javascript
 import axios from 'axios'
-import oauth from 'axios-oauth-client'
-const getClientCredentials = oauth.clientCredentials(
+import { clientCredentials } from 'axios-oauth-client'
+const getClientCredentials = clientCredentials(
   axios.create(),
   'https://oauth.com/2.0/token',
   'CLIENT_ID',
@@ -71,8 +71,8 @@ const auth = await getClientCredentials('OPTIONAL_SCOPES')
 
 ```javascript
 import axios from 'axios'
-import oauth from 'axios-oauth-client'
-const getRefreshToken = oauth.refreshToken(
+import { refreshToken } from 'axios-oauth-client'
+const getRefreshToken = refreshToken(
   axios.create(),
   'https://oauth.com/2.0/token',
   'CLIENT_ID',

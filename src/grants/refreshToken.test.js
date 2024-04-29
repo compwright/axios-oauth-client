@@ -1,7 +1,7 @@
-import assert from 'assert'
+import assert from 'node:assert'
 import { test } from '@jest/globals'
-import refreshToken from './refreshToken'
-import fakeAxios from '../fakeAxios'
+import { refreshToken } from './refreshToken'
+import { fakeAxios } from '../fakeAxios'
 
 /* eslint-disable camelcase */
 

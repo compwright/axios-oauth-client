@@ -6,11 +6,4 @@ declare function ownerCredentials(axios: any, url: any, client_id: any, client_s
 
 declare function refreshToken(axios: any, url: any, client_id: any, client_secret: any, refresh_token?: any, scope?: any): (refresh_token?: any, scope?: any) => any;
 
-declare namespace _default {
-    export { authorizationCode };
-    export { clientCredentials };
-    export { ownerCredentials };
-    export { refreshToken };
-}
-
-export { _default as default };
+export { authorizationCode, clientCredentials, ownerCredentials, refreshToken };

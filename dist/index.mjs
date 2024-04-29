@@ -64,11 +64,4 @@ function refreshToken(axios, url, client_id, client_secret, refresh_token = null
   return (refresh_token2 = null, scope2 = null) => grant({ refresh_token: refresh_token2, scope: scope2 });
 }
 
-const index = {
-  authorizationCode,
-  clientCredentials,
-  ownerCredentials,
-  refreshToken
-};
-
-export { index as default };
+export { authorizationCode, clientCredentials, ownerCredentials, refreshToken };

@@ -1,8 +1,8 @@
-import oauth from '../oauth'
+import { oauth } from '../oauth'
 
 /* eslint-disable camelcase */
 
-export default function refreshToken (axios, url, client_id, client_secret, refresh_token = null, scope = null) {
+export function refreshToken (axios, url, client_id, client_secret, refresh_token = null, scope = null) {
   const grant = oauth(axios, {
     url,
     grant_type: 'refresh_token',
