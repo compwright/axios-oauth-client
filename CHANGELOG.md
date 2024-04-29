@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/compwright/axios-oauth-client/compare/v2.1.0...v2.2.0) (2024-04-29)
+
+
+### Features
+
+* remove default imports ([377a5b1](https://github.com/compwright/axios-oauth-client/commit/377a5b1ee5cadc0dbd7579338ec25321d1384a72)), closes [#34](https://github.com/compwright/axios-oauth-client/issues/34)
+
 ## [2.1.0](https://github.com/compwright/axios-oauth-client/compare/v2.0.4...v2.1.0) (2024-04-28)
 
 
