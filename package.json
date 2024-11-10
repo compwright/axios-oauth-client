@@ -4,6 +4,15 @@
   "description": "OAuth 2.0 client utils for axios",
   "author": "Jonathon Hill <jhill9693@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && unbuild",
+    "prebuild": "npm run test",
+    "clean": "rimraf dist",
+    "lint": "standard --fix src",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "pretest": "npm run lint",
+    "release": "standard-version"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/compwright/axios-oauth-client.git"
@@ -41,10 +50,11 @@
     ]
   },
   "devDependencies": {
-    "jest": "latest",
-    "standard": "latest",
-    "standard-version": "latest",
-    "unbuild": "latest"
+    "jest": "*",
+    "rimraf": "*",
+    "standard": "*",
+    "standard-version": "*",
+    "unbuild": "*"
   },
   "peerDependencies": {
     "axios": "^1.2.1"
