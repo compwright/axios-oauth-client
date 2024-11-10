@@ -5,9 +5,9 @@ export function oauth (axios, { url, ...credentials }) {
       ...moreCredentials
     }
 
-    // remove blank scope
-    if ('scope' in body && !body.scope) {
-      delete body.scope
+    // remove all blank values
+    for (const key of Object.keys(body)) {
+      if (!body[key]) { delete body[key] }
     }
 
     return axios({
