@@ -4,8 +4,10 @@ function oauth(axios, { url, ...credentials }) {
       ...credentials,
       ...moreCredentials
     };
-    if ("scope" in body && !body.scope) {
-      delete body.scope;
+    for (const key of Object.keys(body)) {
+      if (!body[key]) {
+        delete body[key];
+      }
     }
     return axios({
       url,
