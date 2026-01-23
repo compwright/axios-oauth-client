@@ -70,6 +70,26 @@ describe('oauth()', function () {
       })
     })
 
+    test('should omit any null or undefined value', async function () {
+      const params = {
+        url: 'https://oauth.com/2.0/token',
+        grant_type: 'client_credentials',
+        client_id: undefined,
+        client_secret: undefined,
+        scope: null
+      }
+
+      const actualConfig = {}
+      const auth = oauth(fakeAxios(actualConfig), params)
+      await auth()
+
+      assert.deepStrictEqual(actualConfig, {
+        url: 'https://oauth.com/2.0/token',
+        method: 'post',
+        data: 'grant_type=client_credentials'
+      })
+    })
+
     test('should resolve to the OAuth token response', async function () {
       const expectedData = { access_token: 'FAKE_TOKEN', expires_in: 5 }
       const auth = oauth(fakeAxios({}, expectedData), {})
