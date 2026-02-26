@@ -44,9 +44,7 @@
     "jest": "latest",
     "standard": "latest",
     "standard-version": "latest",
+    "typescript": "latest",
     "unbuild": "latest"
-  },
-  "peerDependencies": {
-    "axios": "^1.2.1"
   }
 }
